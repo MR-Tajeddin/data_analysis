@@ -1,0 +1,23 @@
+
+# ********************
+sentence = "This is a common interview question"
+
+char_frequency = {}
+for char in sentence:
+    if not char in char_frequency:
+        char_frequency[char] = 1
+    else:
+        char_frequency[char] += 1
+
+items = char_frequency.items()
+sorted_char_frequency = sorted(items, key=lambda item: item[1], reverse=True)
+
+max_count = sorted_char_frequency[0][1]
+print(f"Max Count: {max_count}")
+
+for item in sorted_char_frequency:
+    if item[1] == max_count:
+        print(f"[{item[0]}]")
+    else:
+        break
+# ********************
